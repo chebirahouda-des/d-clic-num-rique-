@@ -1,0 +1,325 @@
+/* 1. REGLAGES GENERAUX */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #faf9f2;
+    color: #26382d;
+}
+
+/* 2. EN-TETE */
+
+header {
+    background-color: #fffdf8;
+    padding: 22px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+}
+
+header h1 {
+    color: #14583d;
+    font-size: 28px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #26382d;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #16865a;
+}
+
+/* 3. PRESENTATION PRINCIPALE */
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 45px 8%;
+    gap: 40px;
+    background: linear-gradient(120deg, #fff9ed, #e3efdf);
+}
+
+.hero-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.hero h2 {
+    font-size: 48px;
+    color: #123d2d;
+    margin-bottom: 20px;
+    line-height: 1.15;
+}
+
+.hero p {
+    font-size: 19px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.hero-image {
+    flex: 1;
+    min-width: 0;
+}
+
+.hero-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 30px 80px 30px 80px;
+    box-shadow: 8px 8px 0 #dfb653;
+}
+
+/* 4. BOUTON PRINCIPAL */
+
+button {
+    background: linear-gradient(135deg, #16865a, #104b33);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    background: #106943;
+}
+
+/* 5. RUBRIQUES */
+
+.categories {
+    padding: 40px 6%;
+    text-align: center;
+}
+
+.categories h2 {
+    font-size: 34px;
+    color: #14583d;
+    margin-bottom: 10px;
+}
+
+.intro {
+    color: #52675a;
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background: #fffdf8;
+    padding: 15px 15px 25px;
+    border-radius: 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #e5eee8;
+    box-shadow: 0 6px 20px rgba(22, 134, 90, 0.10);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(22, 134, 90, 0.20);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+.card span {
+    font-size: 35px;
+}
+
+.card h3 {
+    color: #14583d;
+    font-size: 23px;
+    margin: 15px 0;
+}
+
+.card p {
+    color: #52675a;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.card a {
+    display: inline-block;
+    background: #14583d;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: auto;
+}
+
+.card a:hover {
+    background: #16865a;
+}
+
+/* 6. PIED DE PAGE */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background-color: #104b33;
+    color: white;
+}
+
+/* 7. CHAPITRES */
+
+.chapitre {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 40px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    text-align: left;
+}
+
+.chapitre h2,
+.chapitre h3 {
+    color: #14583d;
+    margin-bottom: 20px;
+}
+
+.chapitre h3 {
+    margin-top: 25px;
+}
+
+.chapitre h4 {
+    margin-top: 20px;
+    color: #263b32;
+}
+
+.chapitre p {
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+.chapitre ul {
+    padding-left: 25px;
+    margin-top: 10px;
+}
+
+.chapitre li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+/* 8. ADAPTATION TABLETTE ET MOBILE */
+
+@media (max-width: 900px) {
+
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero h2 {
+        font-size: 34px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .chapitre {
+        margin: 20px;
+        padding: 25px;
+    }
+}.categories h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.categories h2::before,
+.categories h2::after {
+    content: "";
+    width: 100px;
+    height: 3px;
+    background-color: #dfb653;
+    border-radius: 5px;
+}/* LOGO DU SITE */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+}
+
+.logo h1 {
+    font-size: 28px;
+    color: #14583d;
+}.chapitre {
+    border-left: 6px solid #14583d;
+    background-color: #fffdf8;
+}
+
+.chapitre h2 {
+    border-bottom: 2px solid #dfb653;
+    padding-bottom: 15px;
+    font-size: 26px;
+}
+
+.chapitre h4 {
+    color: #14583d;
+    background-color: #eaf3e9;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.chapitre p {
+    font-size: 17px;
+    line-height: 1.8;
+}
